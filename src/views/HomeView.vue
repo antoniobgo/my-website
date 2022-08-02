@@ -65,8 +65,10 @@ const cardContents = [
             </v-row>
             <v-row justify="center" class="mt-5">
               <p class="card-text text-center">
-                Sempre tive interesse pela área de desenvolvimento de software e
-                desenvolvo aplicações web há 3 anos.
+                Sempre tive interesse pela área de desenvolvimento de software,
+                começando meus estudos na área há 6 anos e desenvolvendo
+                aplicações web de forma profissional há 3 anos. Sou apaixonado
+                pelo que faço e tenho uma grande sede de conhecimento :)
               </p>
             </v-row>
           </v-col>
