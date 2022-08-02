@@ -34,15 +34,35 @@ console.log(props.cardContent.cardClasses[0]);
       </v-row>
     </v-card-title>
     <v-card-text>
-      <v-row justify="center" class="py-10">
-        <p class="text-subtitle-1">{{ props.cardContent.subtitle }}</p>
+      <v-row justify="center" class="py-5">
+        <p class="text-subtitle-1" style="color: rgb(var(--v-theme-primary))">
+          {{ props.cardContent.subtitle }}
+        </p>
       </v-row>
       <v-row
         v-for="tool in props.cardContent.tools"
         :key="tool"
         justify="center"
       >
-        <p class="text-subtitle-1">{{ tool }}</p>
+        <p class="text-subtitle-1 pa-1">{{ tool }}</p>
+      </v-row>
+      <v-row
+        v-if="props.cardContent.subTools"
+        justify="center"
+        class="pt-5 pb-3"
+      >
+        <p class="text-subtitle-1" style="color: rgb(var(--v-theme-primary))">
+          Além disso, também tenho interesse em:
+        </p>
+      </v-row>
+      <v-row
+        v-for="subTool in props.cardContent.subTools"
+        :key="subTool"
+        justify="center"
+      >
+        <p class="text-subtitle-1 pa-1">
+          {{ subTool }}
+        </p>
       </v-row>
     </v-card-text>
   </v-card>

@@ -65,12 +65,8 @@ const cardContents = [
             </v-row>
             <v-row justify="center" class="mt-5">
               <p class="card-text text-center">
-                Since beginning my journey as a freelance designer nearly 10
-                years ago, I've done remote work for agencies, consulted for
-                startups, and collaborated with talented people to create
-                digital products for both business and consumer use. I'm quietly
-                confident, naturally curious, and perpetually working on
-                improving my chops one design problem at a time.
+                Sempre tive interesse pela área de desenvolvimento de software e
+                desenvolvo aplicações web há 3 anos.
               </p>
             </v-row>
           </v-col>
