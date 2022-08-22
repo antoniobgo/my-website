@@ -13,8 +13,16 @@ const cardContents = [
     icon: "mdi-xml",
     title: "Front End",
     subtitle: "Linguagens e ferramentas",
-    tools: ["html", "css", "javascript", "vue.js", "vuetify", "vscode"],
-    subTools: ["pug", "react"],
+    tools: [
+      "Html",
+      "Css",
+      "Javascript",
+      "Vue.js",
+      "Vuetify",
+      "Pinia",
+      "Vscode",
+    ],
+    subTools: ["Pug", "React"],
     cardClasses: [rounded1, rounded2],
   },
   {
@@ -50,10 +58,19 @@ const cardContents = [
         <OnHoverButton content="portfolio" />
         <OnHoverButton content="contato" />
       </v-row>
+      <v-row justify="center">
+        <p class="title-text title-margin">Desenvolvedor Full-Stack</p>
+      </v-row>
+      <v-row justify="center">
+        <p class="subtitle-text subtitle-margin">
+          Gosto de ajudar a resolver problemas reais com simplicidade e
+          qualidade.
+        </p>
+      </v-row>
       <div class="avatar-text-positioning">
         <v-row justify="center">
-          <v-avatar size="256" class="mb-10">
-            <v-img :src="require('../assets/avatar.jpeg')" class="my-3" />
+          <v-avatar size="235px" class="mb-10 avatar-container">
+            <img :src="require('../assets/pic2.png')" />
           </v-avatar>
         </v-row>
         <v-row justify="center" class="bg-primary extend-card">
@@ -80,9 +97,51 @@ const cardContents = [
         </v-col>
       </v-row>
     </v-container>
-    <v-container>
-      <MyCarousel />
-    </v-container>
+    <v-row justify="center">
+      <p class="secondary-title-text">Trabalhos Recentes</p>
+    </v-row>
+    <v-row class="my-10" justify="center">
+      <p class="default-text">
+        Here are a few past design projects I've worked on. Want to see more?
+        Email me.
+      </p>
+    </v-row>
+    <v-row class="my-10" justify="center">
+      <v-col cols="8">
+        <v-row>
+          <v-col cols="4">
+            <v-card height="290" variant="outlined">
+              <v-img
+                color="black"
+                :src="require('../assets/felipe-logo.svg')"
+                contain
+                style="height: 100%"
+              ></v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="4">
+            <v-card height="290" variant="outlined">
+              <v-img
+                color="black"
+                :src="require('../assets/felipe-logo.svg')"
+                contain
+                style="height: 100%"
+              ></v-img>
+            </v-card>
+          </v-col>
+          <v-col cols="4">
+            <v-card height="290" variant="outlined">
+              <v-img
+                color="black"
+                :src="require('../assets/felipe-logo.svg')"
+                contain
+                style="height: 100%"
+              ></v-img>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -101,8 +160,7 @@ const cardContents = [
   font-size: 1.25rem !important;
   font-weight: 300;
   line-height: 2rem;
-  letter-spacing: 0.03125em !important;
-  font-family: "Roboto", sans-serif !important;
+  letter-spacing: 0.1em !important;
   text-transform: none !important;
 }
 .home-container {
@@ -120,4 +178,15 @@ const cardContents = [
   margin-right: -21.5vw;
   height: 65vh;
 }
+.title-margin {
+  margin-top: 10rem;
+}
+.subtitle-margin {
+  margin-top: 2rem;
+}
+/* .avatar-container {
+  width: 20rem;
+
+  height: 15rem;
+} */
 </style>

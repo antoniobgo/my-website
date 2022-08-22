@@ -12,7 +12,7 @@ console.log(props.cardContent.cardClasses[0]);
       props.cardContent.cardClasses[1].value,
     ]"
     style="position: relative; bottom: 17.5vh"
-    min-height="600"
+    min-height="700"
   >
     <v-card-title>
       <v-row>
@@ -27,7 +27,7 @@ console.log(props.cardContent.cardClasses[0]);
           </v-row>
           <v-row class="pb-10">
             <v-spacer />
-            <p class="text-h4">{{ props.cardContent.title }}</p>
+            <p class="card-title">{{ props.cardContent.title }}</p>
             <v-spacer />
           </v-row>
         </v-col>
@@ -35,7 +35,7 @@ console.log(props.cardContent.cardClasses[0]);
     </v-card-title>
     <v-card-text>
       <v-row justify="center" class="py-5">
-        <p class="text-subtitle-1" style="color: rgb(var(--v-theme-primary))">
+        <p class="default-text" style="color: rgb(var(--v-theme-primary))">
           {{ props.cardContent.subtitle }}
         </p>
       </v-row>
@@ -44,15 +44,18 @@ console.log(props.cardContent.cardClasses[0]);
         :key="tool"
         justify="center"
       >
-        <p class="text-subtitle-1 pa-1">{{ tool }}</p>
+        <p class="default-text pa-2">{{ tool }}</p>
       </v-row>
       <v-row
         v-if="props.cardContent.subTools"
         justify="center"
         class="pt-5 pb-3"
       >
-        <p class="text-subtitle-1" style="color: rgb(var(--v-theme-primary))">
-          Além disso, também tenho interesse em:
+        <p
+          class="default-text text-center"
+          style="color: rgb(var(--v-theme-primary))"
+        >
+          Também tenho interesse em:
         </p>
       </v-row>
       <v-row
@@ -60,7 +63,7 @@ console.log(props.cardContent.cardClasses[0]);
         :key="subTool"
         justify="center"
       >
-        <p class="text-subtitle-1 pa-1">
+        <p class="default-text pa-1">
           {{ subTool }}
         </p>
       </v-row>
