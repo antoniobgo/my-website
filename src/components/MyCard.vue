@@ -1,9 +1,6 @@
 <script setup>
 import { defineProps } from "vue";
 const props = defineProps(["cardContent"]);
-
-// console.log(props.cardContent.cardClasses[1]);
-console.log(props.cardContent.cardClasses[0]);
 </script>
 <template>
   <v-card

@@ -1,16 +1,23 @@
 <script setup>
 import OnHoverButton from "./components/OnHoverButton.vue";
+import router from "./router/index.js";
+
+const onContactButtonClick = function () {
+  router.push({ name: "contact" });
+};
+const onLogoClick = function () {
+  router.push({ name: "home" });
+};
 </script>
 
 <template>
   <v-app class="app-font">
     <v-app-bar flat class="text-primary my-app-bar">
-      <v-row justify="space-between">
-        <!-- <div class="logo"></div> -->
-        <v-btn class="mb-3 ml-16">
+      <v-row justify="space-between" align="center">
+        <v-btn class="mb-3 ml-16 h-100">
           <div @click="onLogoClick" class="logo"></div>
         </v-btn>
-        <div class="mr-16">
+        <div @click="onContactButtonClick" class="mr-16">
           <OnHoverButton
             size="x-small"
             rounded="0"

@@ -8,8 +8,6 @@ const props = defineProps({
 });
 const size = props.size ? ref(props.size) : undefined;
 const rounded = props.rounded ? ref(props.rounded) : undefined;
-
-console.log(props.size);
 </script>
 <template>
   <v-hover v-slot="{ props, isHovering }">
