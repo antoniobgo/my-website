@@ -30,20 +30,20 @@ const cardContents = [
     title: "Back End",
     subtitle: "Linguagens e ferramentas",
     tools: [
-      "node.js",
-      "git",
+      "Node.js",
+      "Git",
       "banco de dados relacional",
       "APIs Rest",
-      "vscode",
+      "Vscode",
     ],
-    subTools: ["ruby on rails", "NoSQL", "graphql"],
+    subTools: ["Ruby on Rails", "NoSQL", "Graphql"],
     cardClasses: [rounded4, rounded2],
   },
   {
     icon: "mdi-book-open-outline",
     title: "Interesses",
     subtitle: "Áreas de interesse",
-    tools: ["Código limpo", "Padrões de projeto", "metodologias ágeis"],
+    tools: ["Código limpo", "Padrões de projeto", "Metodologias ágeis"],
     cardClasses: [rounded3, rounded4],
   },
 ];
@@ -154,7 +154,7 @@ const cardContents = [
   margin-bottom: 22vh;
 }
 .avatar-text-positioning {
-  margin-top: 25vh;
+  margin-top: 6rem;
 }
 .card-text {
   font-size: 1.25rem !important;
@@ -182,7 +182,7 @@ const cardContents = [
   margin-top: 10rem;
 }
 .subtitle-margin {
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 /* .avatar-container {
   width: 20rem;

@@ -1,14 +1,22 @@
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, ref } from "vue";
 // eslint-disable-next-line no-undef
-const props = defineProps(["content"]);
+const props = defineProps({
+  size: String,
+  content: String,
+  rounded: String,
+});
+const size = props.size ? ref(props.size) : undefined;
+const rounded = props.rounded ? ref(props.rounded) : undefined;
+
+console.log(props.size);
 </script>
 <template>
   <v-hover v-slot="{ props, isHovering }">
     <v-btn
       variant="outlined"
-      size="x-large"
-      rounded="pill"
+      :size="size ? size.value : 'x-large'"
+      :rounded="rounded ? rounded : 'pill'"
       :class="{
         'bg-primary': isHovering,
         'text-white': isHovering,

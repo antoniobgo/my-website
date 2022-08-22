@@ -1,12 +1,21 @@
+<script setup>
+import OnHoverButton from "./components/OnHoverButton.vue";
+</script>
+
 <template>
   <v-app class="app-font">
-    <v-app-bar flat class="text-primary">
-      <v-row justify="space-around">
-        <div>
-          <h1 class="hmm">Antonio - Freelancer Developer</h1>
-        </div>
-        <div>
-          <h2>Contato: 48 9 98585899</h2>
+    <v-app-bar flat class="text-primary my-app-bar">
+      <v-row justify="space-between">
+        <!-- <div class="logo"></div> -->
+        <v-btn class="mb-3 ml-16">
+          <div @click="onLogoClick" class="logo"></div>
+        </v-btn>
+        <div class="mr-16">
+          <OnHoverButton
+            size="x-small"
+            rounded="0"
+            content="Mande uma mensagem"
+          />
         </div>
       </v-row>
     </v-app-bar>
@@ -36,9 +45,15 @@
   </v-app>
 </template>
 
-<script setup></script>
-
 <style>
+.my-app-bar {
+  height: 5rem;
+}
+.logo {
+  background: url("./assets/logo.png") no-repeat;
+  height: 5rem;
+  width: 15rem;
+}
 .app-font {
   font-family: Alata, sans-serif;
 }
@@ -71,5 +86,8 @@
   line-height: 1.6rem;
   font-size: 1.2rem;
   letter-spacing: 0.05rem;
+}
+.margin-right {
+  margin-right: 2rem;
 }
 </style>
