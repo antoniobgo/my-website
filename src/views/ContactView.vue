@@ -5,6 +5,8 @@ import router from "../router/index.js";
 import axios from "axios";
 
 const emailInfos = ref({});
+const isLoading = ref(false);
+const showErrorMessage = ref(false);
 const pattern =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 function isButtonDisabled() {
@@ -14,28 +16,38 @@ function isButtonDisabled() {
     !emailInfos.value.message
   )
     return true;
-  console.log(pattern.test(emailInfos.value.reply_to));
-  return pattern.test(emailInfos.value.reply_to);
+  return !pattern.test(emailInfos.value.reply_to);
 }
 const rules = {
   required: (value) => !!value || "Campo obrigatório.",
   counter: (value) => value.length <= 20 || "Max 20 characters",
   email: (value) => {
-    return !pattern.test(value) || "E-mail inválido.";
+    return pattern.test(value) || "E-mail inválido.";
   },
 };
 
 const onSendEmailClick = () => {
+  isLoading.value = true;
   axios
     .post("https://api.emailjs.com/api/v1.0/email/send", {
       service_id: "service_qlhnalf",
       template_id: "template_duey9ac",
       user_id: "mpUBQi_YKZSGRfpYd",
-      template_params: emailInfos,
+      template_params: emailInfos.value,
     })
     .then((res) => {
       console.log(res);
-      if (res.status === 200) router.push({ name: "home" });
+      if (res.status === 200) {
+        router.push({ name: "home" });
+        showErrorMessage.value = false;
+      }
+    })
+    .catch((error) => {
+      showErrorMessage.value = true;
+    })
+    .then(() => {
+      emailInfos.value = {};
+      isLoading.value = false;
     });
 };
 </script>
@@ -52,7 +64,9 @@ const onSendEmailClick = () => {
             </v-row>
           </v-card-title>
           <v-card-text>
-            <p class="default-text">Me mande um email caso queira conversar</p>
+            <p class="default-text">
+              Me mande um email caso queira conversar :)
+            </p>
             <v-row class="mt-10" no-gutters>
               <v-col cols="9">
                 <p class="subtitle-text">Nome</p>
@@ -83,10 +97,19 @@ const onSendEmailClick = () => {
             </v-row>
           </v-card-text>
           <v-row justify="end">
+            <v-row no-gutters dense justify="start">
+              <p v-if="showErrorMessage" class="subtitle-text">
+                Ops, parece que algo deu errado. Por favor, tente novamente.
+              </p>
+            </v-row>
             <v-spacer />
             <v-spacer />
             <div>
-              <v-btn @click="onSendEmailClick" :disabled="isButtonDisabled()">
+              <v-btn
+                @click="onSendEmailClick"
+                :disabled="isButtonDisabled()"
+                :loading="isLoading"
+              >
                 Enviar
               </v-btn>
             </div>
