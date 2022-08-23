@@ -1,6 +1,24 @@
 <script setup>
+import { ref } from "vue";
 import OnHoverButton from "@/components/OnHoverButton.vue";
-// @ is an alias to /src
+import router from "../router/index.js";
+import axios from "axios";
+
+const emailInfos = ref({});
+
+const onSendEmailClick = () => {
+  axios
+    .post("https://api.emailjs.com/api/v1.0/email/send", {
+      service_id: "service_qlhnalf",
+      template_id: "template_duey9ac",
+      user_id: "mpUBQi_YKZSGRfpYd",
+      template_params: emailInfos.value,
+    })
+    .then((res) => {
+      console.log(res);
+      if (res.status === 200) router.push({ name: "home" });
+    });
+};
 </script>
 
 <template>
@@ -20,25 +38,34 @@ import OnHoverButton from "@/components/OnHoverButton.vue";
               <v-col cols="9">
                 <p class="subtitle-text">Nome</p>
                 <v-text-field
+                  v-model="emailInfos.from_name"
                   class="form-field"
                   density="compact"
                   variant="outlined"
                 ></v-text-field>
                 <p class="subtitle-text">Email</p>
                 <v-text-field
+                  v-model="emailInfos.reply_to"
                   class="form-field"
                   density="compact"
                   variant="outlined"
                 ></v-text-field>
                 <p class="subtitle-text">Mensagem</p>
-                <v-textarea density="compact" variant="outlined"> </v-textarea>
+                <v-textarea
+                  v-model="emailInfos.message"
+                  density="compact"
+                  variant="outlined"
+                >
+                </v-textarea>
               </v-col>
             </v-row>
           </v-card-text>
           <v-row justify="end">
             <v-spacer />
             <v-spacer />
-            <OnHoverButton content="Enviar" />
+            <div @click="onSendEmailClick">
+              <OnHoverButton content="Enviar" />
+            </div>
             <v-spacer />
           </v-row>
           <v-card-actions>
