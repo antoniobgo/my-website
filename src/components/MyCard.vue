@@ -40,7 +40,7 @@ const props = defineProps(["cardContent"]);
         :key="tool"
         justify="center"
       >
-        <p class="default-text pa-2">{{ tool }}</p>
+        <p class="subtitle-text pa-2">{{ tool }}</p>
       </v-row>
       <v-row
         v-if="props.cardContent.subTools"
@@ -59,7 +59,7 @@ const props = defineProps(["cardContent"]);
         :key="subTool"
         justify="center"
       >
-        <p class="default-text pa-1">
+        <p class="subtitle-text pa-2">
           {{ subTool }}
         </p>
       </v-row>
