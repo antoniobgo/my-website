@@ -8,7 +8,6 @@ const props = defineProps(["cardContent"]);
       props.cardContent.cardClasses[0].value,
       props.cardContent.cardClasses[1].value,
     ]"
-    style="position: relative; bottom: 17.5vh"
     min-height="700"
   >
     <v-card-title>

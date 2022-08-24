@@ -1,12 +1,17 @@
 <script setup>
 import OnHoverButton from "../components/OnHoverButton.vue";
 import MyCard from "../components/MyCard.vue";
+import router from "../router/index.js";
 import { ref } from "vue";
 
 const rounded1 = ref("rounded-s-xl");
 const rounded2 = ref("rounded-e-0");
 const rounded3 = ref("rounded-e-xl");
 const rounded4 = ref("rounded-s-0");
+
+const quemSou = ref();
+const oQueFaco = ref();
+const portfolio = ref();
 
 const cardContents = [
   {
@@ -47,16 +52,33 @@ const cardContents = [
     cardClasses: [rounded3, rounded4],
   },
 ];
+const onQuemSouClick = () => {
+  quemSou.value.scrollIntoView({ behavior: "smooth" });
+};
+const onOQueFacoClick = () => {
+  oQueFaco.value.scrollIntoView({ behavior: "smooth" });
+};
+const onPortfolioClick = () => {
+  portfolio.value.scrollIntoView({ behavior: "smooth" });
+};
 </script>
 
 <template>
   <div>
     <v-container class="home-container mt-10 pt-10">
       <v-row justify="space-between">
-        <OnHoverButton content="quem sou" />
-        <OnHoverButton content="o que faço" />
-        <OnHoverButton content="portfolio" />
-        <OnHoverButton content="contato" />
+        <div @click="onQuemSouClick">
+          <OnHoverButton content="quem sou" />
+        </div>
+        <div @click="onOQueFacoClick">
+          <OnHoverButton content="o que faço" />
+        </div>
+        <div @click="onPortfolioClick">
+          <OnHoverButton content="portfolio" />
+        </div>
+        <div @click="router.push({ name: 'contact' })">
+          <OnHoverButton content="contato" />
+        </div>
       </v-row>
       <v-row justify="center">
         <p class="title-text title-margin">Desenvolvedor Full-Stack</p>
@@ -76,7 +98,7 @@ const cardContents = [
         <v-row justify="center" class="bg-primary extend-card">
           <v-col align-self="center" cols="6" class="mb-30">
             <v-row no-gutters justify="center">
-              <p class="text-h4 font-weight-bold">
+              <p ref="quemSou" class="text-h4 font-weight-bold">
                 Olá, sou o Antônio. Prazer em te conhecer.
               </p>
             </v-row>
@@ -91,7 +113,12 @@ const cardContents = [
           </v-col>
         </v-row>
       </div>
-      <v-row justify="center" no-gutters>
+      <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
+      <v-row
+        style="position: relative; bottom: 12rem"
+        justify="center"
+        no-gutters
+      >
         <v-col v-for="content in cardContents" :key="content.title">
           <MyCard :cardContent="content" />
         </v-col>
@@ -101,9 +128,9 @@ const cardContents = [
       <p class="secondary-title-text">Trabalhos Recentes</p>
     </v-row>
     <v-row class="my-10" justify="center">
-      <p class="default-text">
-        Here are a few past design projects I've worked on. Want to see more?
-        Email me.
+      <p ref="portfolio" class="default-text">
+        Aqui estão os últimos trabalhos que realizei. Gostaria de ver mais?
+        <a href="#">Me mande uma mensagem!</a>
       </p>
     </v-row>
     <v-row class="my-10" justify="center">

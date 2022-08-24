@@ -12,7 +12,7 @@ const onLogoClick = function () {
 
 <template>
   <v-app class="app-font">
-    <v-app-bar flat class="text-primary my-app-bar">
+    <v-app-bar absolute flat class="text-primary my-app-bar">
       <v-row justify="space-between" align="center">
         <v-btn class="mb-3 ml-16 h-100">
           <div @click="onLogoClick" class="logo"></div>
