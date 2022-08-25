@@ -5,15 +5,20 @@ const props = defineProps({
   size: String,
   content: String,
   rounded: String,
+  clickFunction: Function,
 });
 const size = props.size ? ref(props.size) : undefined;
 const rounded = props.rounded ? ref(props.rounded) : undefined;
+const clickFunction = props.clickFunction
+  ? ref(props.clickFunction)
+  : undefined;
 </script>
 <template>
   <v-hover v-slot="{ props, isHovering }">
     <v-btn
+      @click="clickFunction"
       variant="outlined"
-      :size="size ? size.value : 'x-large'"
+      size="large"
       :rounded="rounded ? rounded : 'pill'"
       :class="{
         'bg-primary': isHovering,

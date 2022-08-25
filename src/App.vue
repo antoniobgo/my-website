@@ -13,7 +13,7 @@ const onLogoClick = function () {
 <template>
   <v-app class="app-font">
     <v-app-bar absolute flat class="text-primary my-app-bar">
-      <v-row justify="space-between" align="center">
+      <!-- <v-row justify="space-between" align="center">
         <v-btn class="mb-3 ml-16 h-100">
           <div @click="onLogoClick" class="logo"></div>
         </v-btn>
@@ -24,7 +24,22 @@ const onLogoClick = function () {
             content="Mande uma mensagem"
           />
         </div>
-      </v-row>
+      </v-row> -->
+      <template v-slot:prepend>
+        <v-btn class="">
+          <div @click="onLogoClick" class="logo"></div>
+        </v-btn>
+      </template>
+      <template v-slot:append>
+        <v-btn size="small" variant="outlined"> Contato </v-btn>
+        <!-- <div @click="onContactButtonClick">
+          <OnHoverButton
+            size="x-small"
+            rounded="0"
+            content="Mande uma mensagem"
+          />
+        </div> -->
+      </template>
     </v-app-bar>
     <v-main>
       <router-view />

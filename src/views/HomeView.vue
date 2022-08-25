@@ -75,59 +75,86 @@ const onPortfolioClick = () => {
 
 <template>
   <div>
-    <v-container class="home-container mt-10 pt-10">
-      <v-row justify="space-between">
-        <div @click="onQuemSouClick">
-          <OnHoverButton content="quem sou" />
-        </div>
-        <div @click="onOQueFacoClick">
-          <OnHoverButton content="o que faço" />
-        </div>
-        <div @click="onPortfolioClick">
-          <OnHoverButton content="portfolio" />
-        </div>
-        <div @click="router.push({ name: 'contact' })">
-          <OnHoverButton content="contato" />
-        </div>
+    <v-container fluid class="pa-0 mt-16">
+      <v-row dense no-gutters justify="center" align-self="center">
+        <v-col cols="12" sm="12" md="6" lg="3">
+          <v-row no-gutters dense justify="center">
+            <OnHoverButton
+              size="small"
+              content="quem sou"
+              :clickFunction="onQuemSouClick"
+            />
+          </v-row>
+        </v-col>
+        <v-col cols="12" sm="12" md="6" lg="3">
+          <v-row no-gutters dense justify="center">
+            <OnHoverButton
+              size="small"
+              content="o que faço"
+              :clickFunction="onOQueFacoClick"
+            />
+          </v-row>
+        </v-col>
+
+        <v-col cols="12" sm="12" md="6" lg="3">
+          <v-row no-gutters dense justify="center">
+            <OnHoverButton
+              size="small"
+              content="portfolio"
+              :clickFunction="onPortfolioClick"
+            />
+          </v-row>
+        </v-col>
+        <v-col cols="12" sm="12" md="6" lg="3">
+          <v-row no-gutters dense justify="center">
+            <OnHoverButton
+              size="small"
+              content="currículo"
+              :clickFunction="onCurriculoClick"
+            />
+          </v-row>
+        </v-col>
       </v-row>
-      <v-row justify="center">
+      <v-row dense no-gutters justify="center">
         <p class="title-text title-margin">Desenvolvedor Full-Stack</p>
       </v-row>
-      <v-row justify="center">
+      <v-row no-gutters dense justify="center">
         <p class="subtitle-text subtitle-margin">
           Gosto de ajudar a resolver problemas reais com simplicidade e
           qualidade.
         </p>
       </v-row>
       <div class="avatar-text-positioning">
-        <v-row justify="center">
+        <v-row no-gutters dense justify="center">
           <v-avatar size="235px" class="mb-10 avatar-container">
             <img :src="require('../assets/pic2.png')" />
           </v-avatar>
         </v-row>
-        <v-row justify="center" class="bg-primary extend-card">
-          <v-col align-self="center" cols="6" class="mb-30">
-            <v-row no-gutters justify="center">
-              <p ref="quemSou" class="text-h4 font-weight-bold">
-                Olá, sou o Antônio. Prazer em te conhecer.
-              </p>
-            </v-row>
-            <v-row justify="center" class="mt-5">
-              <p class="card-text text-center">
-                Sempre tive interesse pela área de desenvolvimento de software,
-                começando meus estudos na área há 6 anos e desenvolvendo
-                aplicações web de forma profissional há 3 anos. Sou apaixonado
-                pelo que faço e tenho uma grande sede de conhecimento :)
-              </p>
-            </v-row>
-          </v-col>
-        </v-row>
       </div>
+
+      <v-row no-gutters dense justify="center" class="bg-primary extend-card">
+        <v-col align-self="center" cols="6" class="mb-30">
+          <v-row no-gutters justify="center">
+            <p ref="quemSou" class="text-h4 font-weight-bold">
+              Olá, sou o Antônio. Prazer em te conhecer.
+            </p>
+          </v-row>
+          <v-row no-gutters dense justify="center" class="mt-5">
+            <p class="card-text text-center">
+              Sempre tive interesse pela área de desenvolvimento de software,
+              começando meus estudos na área há 6 anos e desenvolvendo
+              aplicações web de forma profissional há 3 anos. Sou apaixonado
+              pelo que faço e tenho uma grande sede de conhecimento :)
+            </p>
+          </v-row>
+        </v-col>
+      </v-row>
       <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
       <v-row
         style="position: relative; bottom: 12rem"
         justify="center"
         no-gutters
+        dense
       >
         <v-col v-for="content in cardContents" :key="content.title">
           <MyCard :cardContent="content" />
@@ -193,9 +220,7 @@ const onPortfolioClick = () => {
   letter-spacing: 0.1em !important;
   text-transform: none !important;
 }
-.home-container {
-  width: 60vw;
-}
+
 .avatar {
   width: 210px;
   height: 210px;
@@ -204,8 +229,7 @@ const onPortfolioClick = () => {
   width: 100vw;
 }
 .extend-card {
-  margin-left: -21.5vw;
-  margin-right: -21.5vw;
+  width: 100%;
   height: 65vh;
 }
 .title-margin {
