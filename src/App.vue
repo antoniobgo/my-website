@@ -94,6 +94,12 @@ const onLogoClick = function () {
   font-size: 1.2rem;
   letter-spacing: 0.05rem;
 }
+.subtitle-card-text {
+  font-weight: 300;
+  line-height: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+}
 .margin-right {
   margin-right: 2rem;
 }

@@ -1,6 +1,7 @@
 <script setup>
 import OnHoverButton from "../components/OnHoverButton.vue";
 import MyCard from "../components/MyCard.vue";
+import PortfolioCard from "../components/PortfolioCard.vue";
 import router from "../router/index.js";
 import { ref } from "vue";
 
@@ -12,6 +13,15 @@ const rounded4 = ref("rounded-s-0");
 const quemSou = ref();
 const oQueFaco = ref();
 const portfolio = ref();
+
+const jobs = [
+  {
+    title:
+      "Desenvolvimento de um site pessoal próprio, servindo informações profissionais relevantes.",
+    techList: ["Front-End", "Vue.js"],
+    repoAddress: "https://github.com/antoniobgo/my-website",
+  },
+];
 
 const cardContents = [
   {
@@ -137,14 +147,7 @@ const onPortfolioClick = () => {
       <v-col cols="8">
         <v-row>
           <v-col cols="4">
-            <v-card height="290" variant="outlined">
-              <v-img
-                color="black"
-                :src="require('../assets/felipe-logo.svg')"
-                contain
-                style="height: 100%"
-              ></v-img>
-            </v-card>
+            <PortfolioCard :portfolio="jobs[0]" />
           </v-col>
           <v-col cols="4">
             <v-card height="290" variant="outlined">
