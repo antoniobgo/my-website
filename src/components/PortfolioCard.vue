@@ -7,11 +7,14 @@ const portfolio = ref(props.portfolio);
 
 <template>
   <div>
-    <v-hover open-delay="100" close-delay="400" v-slot="{ isHovering, props }">
+    <v-hover v-slot="{ isHovering, props }">
       <v-card height="290" variant="outlined" v-bind="props">
         <div v-if="!isHovering" class="h-100">
           <v-row no-gutters dense class="h-100" align="center">
-            <v-img :src="require('../assets/logo.png')" contain></v-img>
+            <v-img
+              :src="require('../assets/' + portfolio.logo)"
+              contain
+            ></v-img>
           </v-row>
         </div>
         <div class="h-100 on-hover-card" v-else>

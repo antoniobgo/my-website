@@ -24,7 +24,15 @@ const jobs = [
     title:
       "Desenvolvimento de um site pessoal próprio, servindo informações profissionais relevantes.",
     techList: ["Front-End", "Vue.js"],
+    logo: "logo.png",
     repoAddress: "https://github.com/antoniobgo/my-website",
+  },
+  {
+    title:
+      "Trabalho ainda em desenvolvimento. Criação de um site a partir de protótipos vindo do cliente",
+    techList: ["Front-End", "Vue.js"],
+    logo: "felipe-logo.svg",
+    repoAddress: "https://github.com/antoniobgo/felipe-website",
   },
 ];
 
@@ -206,16 +214,24 @@ const onPortfolioClick = () => {
             <PortfolioCard :portfolio="jobs[0]" />
           </v-col>
           <v-col cols="12" lg="4" md="6">
-            <PortfolioCard :portfolio="jobs[0]" />
-          </v-col>
-          <v-col cols="12" lg="4" md="6">
-            <PortfolioCard :portfolio="jobs[0]" />
-          </v-col>
-          <v-col cols="12" lg="4" md="6">
-            <PortfolioCard :portfolio="jobs[0]" />
+            <PortfolioCard :portfolio="jobs[1]" />
           </v-col>
         </v-row>
       </v-col>
+    </v-row>
+    <v-row class="mb-10">
+      <v-spacer />
+      <v-spacer />
+      <v-col cols="10" lg="6">
+        <p class="default-text">
+          Gostaria de ver meu currículo?
+          <a
+            href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
+            >Clique aqui.</a
+          >
+        </p>
+      </v-col>
+      <v-spacer />
     </v-row>
   </div>
 </template>
