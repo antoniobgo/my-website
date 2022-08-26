@@ -4,7 +4,9 @@ import MyCard from "../components/MyCard.vue";
 import PortfolioCard from "../components/PortfolioCard.vue";
 import router from "../router/index.js";
 import { ref } from "vue";
+import { useDisplay } from "vuetify";
 
+const { mdAndUp } = useDisplay();
 const rounded1 = ref("rounded-s-xl");
 const rounded2 = ref("rounded-e-0");
 const rounded3 = ref("rounded-e-xl");
@@ -116,13 +118,24 @@ const onPortfolioClick = () => {
         </v-col>
       </v-row>
       <v-row dense no-gutters justify="center">
-        <p class="title-text title-margin">Desenvolvedor Full-Stack</p>
+        <v-col sm="10" xs="10" md="8" lg="8">
+          <v-row justify="center">
+            <p
+              :class="mdAndUp ? 'title-text' : 'smaller-title-text'"
+              class="title-margin"
+            >
+              Desenvolvedor Full-Stack
+            </p>
+          </v-row>
+        </v-col>
       </v-row>
       <v-row no-gutters dense justify="center">
-        <p class="subtitle-text subtitle-margin">
-          Gosto de ajudar a resolver problemas reais com simplicidade e
-          qualidade.
-        </p>
+        <v-col cols="8">
+          <p class="subtitle-text subtitle-margin text-center">
+            Gosto de ajudar a resolver problemas reais com simplicidade e
+            qualidade.
+          </p>
+        </v-col>
       </v-row>
       <div class="avatar-text-positioning">
         <v-row no-gutters dense justify="center">
@@ -155,9 +168,12 @@ const onPortfolioClick = () => {
         justify="center"
         no-gutters
         dense
-      >
-        <v-col v-for="content in cardContents" :key="content.title">
-          <MyCard :cardContent="content" />
+        ><v-col cols="8">
+          <v-row no-gutters dense justify="center">
+            <v-col v-for="content in cardContents" :key="content.title">
+              <MyCard :cardContent="content" />
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-container>

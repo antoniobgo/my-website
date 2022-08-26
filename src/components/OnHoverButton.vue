@@ -16,6 +16,7 @@ const clickFunction = props.clickFunction
 <template>
   <v-hover v-slot="{ props, isHovering }">
     <v-btn
+      class="ma-3"
       @click="clickFunction"
       variant="outlined"
       size="large"

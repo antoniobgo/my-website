@@ -87,8 +87,20 @@ const onLogoClick = function () {
 }
 .title-text {
   font-weight: 800;
-  line-height: 3.4rem;
+  line-height: 5rem;
   font-size: 4rem;
+  letter-spacing: 0.15rem;
+}
+.titleText {
+  font-weight: 800;
+  line-height: 5rem;
+  font-size: 4rem;
+  letter-spacing: 0.15rem;
+}
+.smaller-title-text {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 2.5rem;
   letter-spacing: 0.15rem;
 }
 .default-text {
