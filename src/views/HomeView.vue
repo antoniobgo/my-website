@@ -175,12 +175,19 @@ const onContactButtonClick = () => {
           class="mb-30"
         >
           <v-row no-gutters justify="center">
-            <p ref="quemSou" class="text-h4 font-weight-bold text-center">
+            <p
+              ref="quemSou"
+              class="text-center"
+              :class="mdAndUp ? 'text-h4' : 'smaller-title-text'"
+            >
               Olá, sou o Antônio. Prazer em te conhecer.
             </p>
           </v-row>
           <v-row no-gutters dense justify="center" class="mt-5">
-            <p class="card-text text-center">
+            <p
+              class="text-center"
+              :class="mdAndUp ? 'card-text' : 'smaller-card-text'"
+            >
               Sempre tive interesse pela área de desenvolvimento de software,
               começando meus estudos na área há 6 anos e desenvolvendo
               aplicações web de forma profissional há 3 anos. Sou apaixonado
@@ -266,7 +273,13 @@ const onContactButtonClick = () => {
   letter-spacing: 0.1em !important;
   text-transform: none !important;
 }
-
+.smaller-card-text {
+  font-size: 1rem !important;
+  font-weight: 300;
+  line-height: 1.4rem;
+  letter-spacing: 0.1em !important;
+  text-transform: none !important;
+}
 .avatar {
   width: 210px;
   height: 210px;
