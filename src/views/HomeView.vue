@@ -7,10 +7,13 @@ import { ref } from "vue";
 import { useDisplay } from "vuetify";
 
 const { mdAndUp } = useDisplay();
-const rounded1 = ref("rounded-s-xl");
-const rounded2 = ref("rounded-e-0");
-const rounded3 = ref("rounded-e-xl");
-const rounded4 = ref("rounded-s-0");
+const roundedLeft = ref("rounded-l-xl !important");
+const roundedRight = ref("rounded-r-xl !important");
+const roundedTop = ref("rounded-t-xl !important");
+const roundedBottom = ref("rounded-b-xl !important");
+const rounded6 = ref("rounded-b-0");
+const rounded7 = ref("rounded-0");
+const rounded8 = ref("rounded-t-0");
 
 const quemSou = ref();
 const oQueFaco = ref();
@@ -40,7 +43,6 @@ const cardContents = [
       "Vscode",
     ],
     subTools: ["Pug", "React"],
-    cardClasses: [rounded1, rounded2],
   },
   {
     icon: "mdi-cog-outline",
@@ -54,14 +56,12 @@ const cardContents = [
       "Vscode",
     ],
     subTools: ["Ruby on Rails", "NoSQL", "Graphql"],
-    cardClasses: [rounded4, rounded2],
   },
   {
     icon: "mdi-book-open-outline",
     title: "Interesses",
     subtitle: "Áreas de interesse",
     tools: ["Código limpo", "Padrões de projeto", "Metodologias ágeis"],
-    cardClasses: [rounded3, rounded4],
   },
 ];
 const onQuemSouClick = () => {
@@ -145,10 +145,21 @@ const onPortfolioClick = () => {
         </v-row>
       </div>
 
-      <v-row no-gutters dense justify="center" class="bg-primary extend-card">
-        <v-col align-self="center" cols="6" class="mb-30">
+      <v-row
+        no-gutters
+        dense
+        justify="center"
+        :class="mdAndUp ? 'extend-card' : 'phone-extend-card'"
+        class="bg-primary extend-card"
+      >
+        <v-col
+          :align-self="mdAndUp ? 'center' : 'center'"
+          cols="10"
+          md="8"
+          class="mb-30"
+        >
           <v-row no-gutters justify="center">
-            <p ref="quemSou" class="text-h4 font-weight-bold">
+            <p ref="quemSou" class="text-h4 font-weight-bold text-center">
               Olá, sou o Antônio. Prazer em te conhecer.
             </p>
           </v-row>
@@ -164,14 +175,14 @@ const onPortfolioClick = () => {
       </v-row>
       <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
       <v-row
-        style="position: relative; bottom: 12rem"
+        style="position: relative; bottom: 8rem"
         justify="center"
         no-gutters
         dense
         ><v-col cols="8">
           <v-row no-gutters dense justify="center">
-            <v-col v-for="content in cardContents" :key="content.title">
-              <MyCard :cardContent="content" />
+            <v-col v-for="(content, index) in cardContents" :key="index">
+              <MyCard :cardContent="content" :index="index" />
             </v-col>
           </v-row>
         </v-col>
@@ -247,6 +258,10 @@ const onPortfolioClick = () => {
 .extend-card {
   width: 100%;
   height: 65vh;
+}
+.phone-extend-card {
+  width: 100%;
+  height: 120vh;
 }
 .title-margin {
   margin-top: 10rem;

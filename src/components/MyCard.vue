@@ -1,13 +1,30 @@
 <script setup>
-import { defineProps } from "vue";
-const props = defineProps(["cardContent"]);
+import { defineProps, ref } from "vue";
+import { useDisplay } from "vuetify";
+
+const { mdAndUp } = useDisplay();
+const props = defineProps(["cardContent", "index"]);
+const index = ref(props.index);
+const cardClasses =
+  index.value === 0
+    ? ref(["rounded-r-0", "rounded-l-xl"])
+    : index.value === 1
+    ? ref(["rounded-0"])
+    : ref(["rounded-r-xl", "rounded-l-0"]);
+const smallCardClasses =
+  index.value === 0
+    ? ref(["rounded-t-xl", "rounded-b-0"])
+    : index.value === 1
+    ? ref(["rounded-0", "rounded-0"])
+    : ref(["rounded-b-xl", "rounded-t-0"]);
+console.log(index.value);
+console.log(cardClasses);
+console.log("-----");
+//eslint-disable-next-line
 </script>
 <template>
   <v-card
-    :class="[
-      props.cardContent.cardClasses[0].value,
-      props.cardContent.cardClasses[1].value,
-    ]"
+    :class="mdAndUp ? [...cardClasses] : [...smallCardClasses]"
     min-height="700"
   >
     <v-card-title>
@@ -31,7 +48,10 @@ const props = defineProps(["cardContent"]);
     </v-card-title>
     <v-card-text>
       <v-row justify="center" class="py-5">
-        <p class="default-text" style="color: rgb(var(--v-theme-primary))">
+        <p
+          class="default-text text-center"
+          style="color: rgb(var(--v-theme-primary))"
+        >
           {{ props.cardContent.subtitle }}
         </p>
       </v-row>
@@ -40,7 +60,7 @@ const props = defineProps(["cardContent"]);
         :key="tool"
         justify="center"
       >
-        <p class="subtitle-text pa-2">{{ tool }}</p>
+        <p class="text-center subtitle-text pa-2">{{ tool }}</p>
       </v-row>
       <v-row
         v-if="props.cardContent.subTools"
@@ -59,7 +79,7 @@ const props = defineProps(["cardContent"]);
         :key="subTool"
         justify="center"
       >
-        <p class="subtitle-text pa-2">
+        <p class="subtitle-text text-center pa-2">
           {{ subTool }}
         </p>
       </v-row>
