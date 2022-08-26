@@ -31,7 +31,9 @@ const onLogoClick = function () {
         </v-btn>
       </template>
       <template v-slot:append>
-        <v-btn size="small" variant="outlined"> Contato </v-btn>
+        <v-btn @click="onContactButtonClick" size="small" variant="outlined">
+          Contato
+        </v-btn>
         <!-- <div @click="onContactButtonClick">
           <OnHoverButton
             size="x-small"

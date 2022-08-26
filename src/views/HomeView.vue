@@ -18,6 +18,7 @@ const rounded8 = ref("rounded-t-0");
 const quemSou = ref();
 const oQueFaco = ref();
 const portfolio = ref();
+const curriculo = ref();
 
 const jobs = [
   {
@@ -80,6 +81,12 @@ const onOQueFacoClick = () => {
 };
 const onPortfolioClick = () => {
   portfolio.value.scrollIntoView({ behavior: "smooth" });
+};
+const onCurriculoClick = () => {
+  curriculo.value.scrollIntoView({ behavior: "smooth" });
+};
+const onContactButtonClick = () => {
+  router.push({ name: "contact" });
 };
 </script>
 
@@ -203,7 +210,11 @@ const onPortfolioClick = () => {
       <v-col cols="10" md="8">
         <p ref="portfolio" class="default-text text-center">
           Aqui estão os últimos trabalhos que realizei. Gostaria de ver mais?
-          <a href="#">Me mande uma mensagem!</a>
+          <a
+            @click="onContactButtonClick"
+            class="text-blue text-decoration-underline"
+            >Me mande uma mensagem!</a
+          >
         </p>
       </v-col>
     </v-row>
@@ -223,7 +234,7 @@ const onPortfolioClick = () => {
       <v-spacer />
       <v-spacer />
       <v-col cols="10" lg="6">
-        <p class="default-text">
+        <p ref="curriculo" class="default-text">
           Gostaria de ver meu currículo?
           <a
             href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
