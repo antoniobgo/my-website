@@ -175,11 +175,11 @@ const onPortfolioClick = () => {
       </v-row>
       <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
       <v-row
-        style="position: relative; bottom: 8rem"
+        style="position: relative; bottom: 12rem"
         justify="center"
         no-gutters
         dense
-        ><v-col cols="8">
+        ><v-col cols="8" sm="11" xs="11" md="10">
           <v-row no-gutters dense justify="center">
             <v-col v-for="(content, index) in cardContents" :key="index">
               <MyCard :cardContent="content" :index="index" />
@@ -192,36 +192,27 @@ const onPortfolioClick = () => {
       <p class="secondary-title-text">Trabalhos Recentes</p>
     </v-row>
     <v-row class="my-10" justify="center">
-      <p ref="portfolio" class="default-text">
-        Aqui estão os últimos trabalhos que realizei. Gostaria de ver mais?
-        <a href="#">Me mande uma mensagem!</a>
-      </p>
+      <v-col cols="10" md="8">
+        <p ref="portfolio" class="default-text text-center">
+          Aqui estão os últimos trabalhos que realizei. Gostaria de ver mais?
+          <a href="#">Me mande uma mensagem!</a>
+        </p>
+      </v-col>
     </v-row>
     <v-row class="my-10" justify="center">
-      <v-col cols="8">
+      <v-col cols="11" md="9" lg="8">
         <v-row>
-          <v-col cols="4">
+          <v-col cols="12" lg="4" md="6">
             <PortfolioCard :portfolio="jobs[0]" />
           </v-col>
-          <v-col cols="4">
-            <v-card height="290" variant="outlined">
-              <v-img
-                color="black"
-                :src="require('../assets/felipe-logo.svg')"
-                contain
-                style="height: 100%"
-              ></v-img>
-            </v-card>
+          <v-col cols="12" lg="4" md="6">
+            <PortfolioCard :portfolio="jobs[0]" />
           </v-col>
-          <v-col cols="4">
-            <v-card height="290" variant="outlined">
-              <v-img
-                color="black"
-                :src="require('../assets/felipe-logo.svg')"
-                contain
-                style="height: 100%"
-              ></v-img>
-            </v-card>
+          <v-col cols="12" lg="4" md="6">
+            <PortfolioCard :portfolio="jobs[0]" />
+          </v-col>
+          <v-col cols="12" lg="4" md="6">
+            <PortfolioCard :portfolio="jobs[0]" />
           </v-col>
         </v-row>
       </v-col>
