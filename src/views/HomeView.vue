@@ -33,6 +33,7 @@ const jobs = [
       "Trabalho ainda em desenvolvimento. Criação de um site a partir de protótipos vindo do cliente",
     techList: ["Front-End", "Vue.js"],
     logo: "felipe-logo.svg",
+    link: "https://felipe-website-1e521.web.app",
     repoAddress: "https://github.com/antoniobgo/felipe-website",
   },
 ];

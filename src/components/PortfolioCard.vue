@@ -38,6 +38,22 @@ const portfolio = ref(props.portfolio);
                   >github</v-btn
                 >
               </v-row>
+              <v-row
+                v-if="portfolio.link"
+                no-gutters
+                dense
+                justify="center"
+                class="mt-5"
+                align="center"
+              >
+                <p class="text-white pa-3">Quer ver como está?</p>
+                <v-btn
+                  class="text-white bg-primary"
+                  size="x-small"
+                  :href="portfolio.link"
+                  >clique</v-btn
+                >
+              </v-row>
             </v-col>
             <v-col cols="12">
               <v-row dense no-gutters justify="center">
