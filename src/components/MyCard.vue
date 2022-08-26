@@ -17,10 +17,6 @@ const smallCardClasses =
     : index.value === 1
     ? ref(["rounded-0", "rounded-0"])
     : ref(["rounded-b-xl", "rounded-t-0"]);
-console.log(index.value);
-console.log(cardClasses);
-console.log("-----");
-//eslint-disable-next-line
 </script>
 <template>
   <v-card

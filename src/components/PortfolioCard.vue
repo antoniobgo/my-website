@@ -2,7 +2,6 @@
 import { defineProps, ref } from "vue";
 const props = defineProps(["portfolio"]);
 const portfolio = ref(props.portfolio);
-// console.log(portfolio.value.title);
 </script>
 
 <template>

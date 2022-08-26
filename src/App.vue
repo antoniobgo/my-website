@@ -1,7 +1,9 @@
 <script setup>
 import OnHoverButton from "./components/OnHoverButton.vue";
 import router from "./router/index.js";
+import { useDisplay } from "vuetify";
 
+const { mdAndUp } = useDisplay();
 const onContactButtonClick = function () {
   router.push({ name: "contact" });
 };
@@ -13,34 +15,18 @@ const onLogoClick = function () {
 <template>
   <v-app class="app-font">
     <v-app-bar absolute flat class="text-primary my-app-bar">
-      <!-- <v-row justify="space-between" align="center">
-        <v-btn class="mb-3 ml-16 h-100">
-          <div @click="onLogoClick" class="logo"></div>
-        </v-btn>
-        <div @click="onContactButtonClick" class="mr-16">
-          <OnHoverButton
-            size="x-small"
-            rounded="0"
-            content="Mande uma mensagem"
-          />
-        </div>
-      </v-row> -->
       <template v-slot:prepend>
-        <v-btn class="">
-          <div @click="onLogoClick" class="logo"></div>
+        <v-btn class="mt-5">
+          <div
+            @click="onLogoClick"
+            :class="mdAndUp ? 'logo' : 'responsive-logo'"
+          ></div>
         </v-btn>
       </template>
       <template v-slot:append>
         <v-btn @click="onContactButtonClick" size="small" variant="outlined">
           Contato
         </v-btn>
-        <!-- <div @click="onContactButtonClick">
-          <OnHoverButton
-            size="x-small"
-            rounded="0"
-            content="Mande uma mensagem"
-          />
-        </div> -->
       </template>
     </v-app-bar>
     <v-main>
@@ -66,9 +52,14 @@ const onLogoClick = function () {
   height: 5rem;
 }
 .logo {
-  background: url("./assets/logo.png") no-repeat;
-  height: 5rem;
-  width: 15rem;
+  background: url("./assets/logo.svg") no-repeat;
+  height: 4rem;
+  width: 12rem;
+}
+.responsive-logo {
+  background: url("./assets/logo.svg") no-repeat;
+  height: 3rem;
+  width: 6rem;
 }
 .app-font {
   font-family: Alata, sans-serif;

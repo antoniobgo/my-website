@@ -25,7 +25,7 @@ const jobs = [
     title:
       "Desenvolvimento de um site pessoal próprio, servindo informações profissionais relevantes.",
     techList: ["Front-End", "Vue.js"],
-    logo: "logo.png",
+    logo: "logo.svg",
     repoAddress: "https://github.com/antoniobgo/my-website",
   },
   {

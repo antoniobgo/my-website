@@ -36,7 +36,6 @@ const onSendEmailClick = () => {
       template_params: emailInfos.value,
     })
     .then((res) => {
-      console.log(res);
       if (res.status === 200) {
         router.push({ name: "home" });
         showErrorMessage.value = false;
