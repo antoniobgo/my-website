@@ -153,109 +153,136 @@ const onContactButtonClick = () => {
           </p>
         </v-col>
       </v-row>
-      <div class="avatar-text-positioning">
-        <v-row no-gutters dense justify="center">
-          <v-avatar size="235px" class="mb-10 avatar-container">
-            <img :src="require('../assets/pic2.png')" />
-          </v-avatar>
+
+      <div class="avatar-margin">
+        <v-row no-gutters dense justify="center" align-self="center">
+          <div
+            class="bg-white rounded-border d-flex justify-center align-center"
+          >
+            <v-img
+              class="bg-white"
+              max-width="317"
+              max-height="317"
+              style="border-radius: 50% !important"
+              :src="require('../assets/pic2.png')"
+              cover
+            ></v-img>
+          </div>
         </v-row>
       </div>
-
-      <v-row
-        no-gutters
-        dense
-        justify="center"
-        :class="mdAndUp ? 'extend-card' : 'phone-extend-card'"
-        class="bg-primary extend-card"
-      >
-        <v-col
-          :align-self="mdAndUp ? 'center' : 'center'"
-          cols="10"
-          md="8"
-          class="mb-30"
+      <div class="after-picture-area">
+        <v-row
+          no-gutters
+          dense
+          justify="center"
+          :class="mdAndUp ? 'extend-card' : 'phone-extend-card'"
+          class="bg-primary extend-card"
         >
-          <v-row no-gutters justify="center">
-            <p
-              ref="quemSou"
-              class="text-center"
-              :class="mdAndUp ? 'text-h4' : 'smaller-title-text'"
-            >
-              Olá, sou o Antônio. Prazer em te conhecer.
-            </p>
-          </v-row>
-          <v-row no-gutters dense justify="center" class="mt-5">
-            <p
-              class="text-center"
-              :class="mdAndUp ? 'card-text' : 'smaller-card-text'"
-            >
-              Sempre tive interesse pela área de desenvolvimento de software,
-              começando meus estudos na área há 6 anos e desenvolvendo
-              aplicações web de forma profissional há 3 anos. Sou apaixonado
-              pelo que faço e tenho uma grande sede de conhecimento :)
-            </p>
-          </v-row>
-        </v-col>
-      </v-row>
-      <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
-      <v-row
-        style="position: relative; bottom: 12rem"
-        justify="center"
-        no-gutters
-        dense
-        ><v-col cols="8" sm="11" xs="11" md="10">
-          <v-row no-gutters dense justify="center">
-            <v-col v-for="(content, index) in cardContents" :key="index">
-              <MyCard :cardContent="content" :index="index" />
-            </v-col>
-          </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
-    <v-row justify="center">
-      <p class="secondary-title-text">Trabalhos Recentes</p>
-    </v-row>
-    <v-row class="my-10" justify="center">
-      <v-col cols="10" md="8">
-        <p ref="portfolio" class="default-text text-center">
-          Aqui estão os últimos trabalhos que realizei. Gostaria de ver mais?
-          <a
-            @click="onContactButtonClick"
-            class="text-blue text-decoration-underline"
-            >Me mande uma mensagem!</a
+          <v-col
+            :align-self="mdAndUp ? 'center' : 'center'"
+            cols="10"
+            md="8"
+            class="mb-30"
           >
-        </p>
-      </v-col>
-    </v-row>
-    <v-row class="my-10" justify="center">
-      <v-col cols="11" md="9" lg="8">
-        <v-row>
-          <v-col cols="12" lg="4" md="6">
-            <PortfolioCard :portfolio="jobs[0]" />
-          </v-col>
-          <v-col cols="12" lg="4" md="6">
-            <PortfolioCard :portfolio="jobs[1]" />
+            <v-row class="margin-intro-message" no-gutters justify="center">
+              <p
+                ref="quemSou"
+                class="text-center"
+                :class="mdAndUp ? 'text-h4' : 'smaller-title-text'"
+              >
+                Olá, sou o Antônio. Prazer em te conhecer.
+              </p>
+            </v-row>
+            <v-row no-gutters dense justify="center" class="mt-5">
+              <p
+                class="text-center"
+                :class="mdAndUp ? 'card-text' : 'smaller-card-text'"
+              >
+                Sempre tive interesse pela área de desenvolvimento de software,
+                começando meus estudos na área há 6 anos e desenvolvendo
+                aplicações web de forma profissional há 3 anos. Sou apaixonado
+                pelo que faço e tenho uma grande sede de conhecimento :)
+              </p>
+            </v-row>
           </v-col>
         </v-row>
-      </v-col>
-    </v-row>
-    <v-row class="mb-10">
-      <v-spacer />
-      <v-spacer />
-      <v-col cols="10" lg="6">
-        <p ref="curriculo" class="default-text">
-          Gostaria de ver meu currículo?
-          <a
-            href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
-            >Clique aqui.</a
-          >
-        </p>
-      </v-col>
-      <v-spacer />
-    </v-row>
+        <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
+        <v-row
+          style="position: relative; bottom: 12rem"
+          justify="center"
+          no-gutters
+          dense
+          ><v-col cols="8" sm="11" xs="11" md="10">
+            <v-row no-gutters dense justify="center">
+              <v-col v-for="(content, index) in cardContents" :key="index">
+                <MyCard :cardContent="content" :index="index" />
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <v-row justify="center">
+          <p class="secondary-title-text">Trabalhos Recentes</p>
+        </v-row>
+        <v-row class="my-10" justify="center">
+          <v-col cols="10" md="8">
+            <p ref="portfolio" class="default-text text-center">
+              Aqui estão os últimos trabalhos que realizei. Gostaria de ver
+              mais?
+              <a
+                @click="onContactButtonClick"
+                class="text-blue text-decoration-underline"
+                >Me mande uma mensagem!</a
+              >
+            </p>
+          </v-col>
+        </v-row>
+        <v-row class="my-10" justify="center">
+          <v-col cols="11" md="9" lg="8">
+            <v-row>
+              <v-col cols="12" lg="4" md="6">
+                <PortfolioCard :portfolio="jobs[0]" />
+              </v-col>
+              <v-col cols="12" lg="4" md="6">
+                <PortfolioCard :portfolio="jobs[1]" />
+              </v-col>
+            </v-row>
+          </v-col>
+        </v-row>
+        <v-row class="mb-10">
+          <v-spacer />
+          <v-spacer />
+          <v-col cols="10" lg="6">
+            <p ref="curriculo" class="default-text">
+              Gostaria de ver meu currículo?
+              <a
+                href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
+                >Clique aqui.</a
+              >
+            </p>
+          </v-col>
+          <v-spacer />
+        </v-row>
+      </div>
+    </v-container>
   </div>
 </template>
 
 <style scoped>
+.margin-intro-message {
+  margin-top: 150px;
+}
+.after-picture-area {
+  position: relative;
+  top: -160px;
+  z-index: 0;
+}
+.rounded-border {
+  min-height: 335px;
+  min-width: 335px;
+  border: solid black 1px;
+  border-radius: 50%;
+  z-index: 3;
+}
 .move-up {
   position: relative;
   bottom: 17.5vh;
@@ -263,7 +290,7 @@ const onContactButtonClick = () => {
 .mb-30 {
   margin-bottom: 22vh;
 }
-.avatar-text-positioning {
+.avatar-margin {
   margin-top: 6rem;
 }
 .card-text {
@@ -289,7 +316,7 @@ const onContactButtonClick = () => {
 }
 .extend-card {
   width: 100%;
-  height: 65vh;
+  height: 700px;
 }
 .phone-extend-card {
   width: 100%;
