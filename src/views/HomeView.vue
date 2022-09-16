@@ -180,8 +180,7 @@ const onContactButtonClick = () => {
         >
           <v-col
             :align-self="mdAndUp ? 'center' : 'center'"
-            cols="10"
-            md="8"
+            cols="6"
             class="mb-30"
           >
             <v-row class="margin-intro-message" no-gutters justify="center">
@@ -291,7 +290,7 @@ const onContactButtonClick = () => {
   margin-bottom: 22vh;
 }
 .avatar-margin {
-  margin-top: 6rem;
+  margin-top: 3rem;
 }
 .card-text {
   font-size: 1.25rem !important;
@@ -326,7 +325,7 @@ const onContactButtonClick = () => {
   margin-top: 10rem;
 }
 .subtitle-margin {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 /* .avatar-container {
   width: 20rem;

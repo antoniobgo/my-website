@@ -6,7 +6,7 @@ const myCustomLightTheme = {
   colors: {
     background: "#FFFFFF",
     surface: "#FFFFFF",
-    primary: "#7510f7",
+    primary: "#7610F7",
     secondary: "#FFFFFF",
     error: "#B00020",
     info: "#2196F3",

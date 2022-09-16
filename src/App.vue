@@ -24,7 +24,13 @@ const onLogoClick = function () {
         </v-btn>
       </template>
       <template v-slot:append>
-        <v-btn @click="onContactButtonClick" size="small" variant="outlined">
+        <v-btn
+          id="contact-button"
+          @click="onContactButtonClick"
+          width="110"
+          height="42"
+          variant="outlined"
+        >
           Contato
         </v-btn>
       </template>
@@ -48,6 +54,15 @@ const onLogoClick = function () {
 </template>
 
 <style>
+@font-face {
+  font-family: downloadedInter;
+  src: url("/src/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+#contact-button > .v-btn__content {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.21rem;
+}
 .my-app-bar {
   height: 5rem;
 }
@@ -62,7 +77,7 @@ const onLogoClick = function () {
   width: 6rem;
 }
 .app-font {
-  font-family: Alata, sans-serif;
+  font-family: downloadedInter, sans-serif;
 }
 .secondary-title-text {
   font-weight: 800;
@@ -71,15 +86,9 @@ const onLogoClick = function () {
   letter-spacing: 0.1rem;
 }
 .title-text {
-  font-weight: 800;
-  line-height: 5rem;
-  font-size: 4rem;
-  letter-spacing: 0.15rem;
-}
-.titleText {
-  font-weight: 800;
-  line-height: 5rem;
-  font-size: 4rem;
+  font-weight: 700;
+  line-height: 6.429rem;
+  font-size: 5.313rem;
   letter-spacing: 0.15rem;
 }
 .smaller-title-text {
@@ -101,10 +110,10 @@ const onLogoClick = function () {
   letter-spacing: 0.01rem;
 }
 .subtitle-text {
-  font-weight: 300;
-  line-height: 1.6rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.05rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
 }
 .subtitle-card-text {
   font-weight: 300;
