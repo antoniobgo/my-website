@@ -84,7 +84,6 @@ const onLogoClick = function () {
   font-weight: 700;
   line-height: 1.563rem;
   font-size: 2.5rem;
-  letter-spacing: 0.1rem;
 }
 .title-text {
   font-weight: 700;
@@ -113,8 +112,8 @@ const onLogoClick = function () {
 .subtitle-text {
   font-weight: 500;
   line-height: 2.5rem;
-  font-size: 1.344rem;
-  letter-spacing: 0.056rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
 }
 .subtitle-card-text {
   font-weight: 300;
