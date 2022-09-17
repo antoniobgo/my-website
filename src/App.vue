@@ -16,7 +16,7 @@ const onLogoClick = function () {
   <v-app class="app-font">
     <v-app-bar absolute flat class="text-primary my-app-bar">
       <template v-slot:prepend>
-        <v-btn class="mt-5">
+        <v-btn class="mt-8 ml-8">
           <div
             @click="onLogoClick"
             :class="mdAndUp ? 'logo' : 'responsive-logo'"
@@ -26,6 +26,7 @@ const onLogoClick = function () {
       <template v-slot:append>
         <v-btn
           id="contact-button"
+          class="mt-8 mr-8"
           @click="onContactButtonClick"
           width="110"
           height="42"
@@ -80,16 +81,16 @@ const onLogoClick = function () {
   font-family: downloadedInter, sans-serif;
 }
 .secondary-title-text {
-  font-weight: 800;
-  line-height: 2.25rem;
-  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.563rem;
+  font-size: 2.5rem;
   letter-spacing: 0.1rem;
 }
 .title-text {
   font-weight: 700;
   line-height: 6.429rem;
   font-size: 5.313rem;
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.1rem;
 }
 .smaller-title-text {
   font-size: 1.4rem;
@@ -98,22 +99,22 @@ const onLogoClick = function () {
   letter-spacing: 0.15rem;
 }
 .default-text {
-  font-weight: 300;
-  line-height: 1.875rem;
-  font-size: 1.5rem;
-  letter-spacing: 0.01rem;
+  font-weight: 600;
+  line-height: 2.063rem;
+  font-size: 1.69rem;
+  letter-spacing: 0.056rem;
 }
 .card-title {
-  font-weight: 800;
-  line-height: 1.8rem;
-  font-size: 2rem;
-  letter-spacing: 0.01rem;
+  font-weight: 900;
+  line-height: 3.75rem;
+  font-size: 3.125rem;
+  letter-spacing: 0.056rem;
 }
 .subtitle-text {
   font-weight: 500;
   line-height: 2.5rem;
-  font-size: 1.5rem;
-  letter-spacing: 0.125rem;
+  font-size: 1.344rem;
+  letter-spacing: 0.056rem;
 }
 .subtitle-card-text {
   font-weight: 300;

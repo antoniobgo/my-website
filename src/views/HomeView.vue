@@ -61,7 +61,7 @@ const cardContents = [
     tools: [
       "Node.js",
       "Git",
-      "banco de dados relacional",
+      "Banco de dados relacional",
       "APIs Rest",
       "Vscode",
     ],
@@ -180,22 +180,22 @@ const onContactButtonClick = () => {
         >
           <v-col
             :align-self="mdAndUp ? 'center' : 'center'"
-            cols="6"
+            cols="7"
             class="mb-30"
           >
             <v-row class="margin-intro-message" no-gutters justify="center">
               <p
                 ref="quemSou"
                 class="text-center"
-                :class="mdAndUp ? 'text-h4' : 'smaller-title-text'"
+                :class="mdAndUp ? 'secondary-title-text' : 'smaller-title-text'"
               >
                 Olá, sou o Antônio. Prazer em te conhecer.
               </p>
             </v-row>
-            <v-row no-gutters dense justify="center" class="mt-5">
+            <v-row no-gutters dense justify="center" class="mt-10">
               <p
                 class="text-center"
-                :class="mdAndUp ? 'card-text' : 'smaller-card-text'"
+                :class="mdAndUp ? 'subtitle-text' : 'smaller-card-text'"
               >
                 Sempre tive interesse pela área de desenvolvimento de software,
                 começando meus estudos na área há 6 anos e desenvolvendo
@@ -207,14 +207,14 @@ const onContactButtonClick = () => {
         </v-row>
         <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
         <v-row
-          style="position: relative; bottom: 12rem"
+          style="position: relative; bottom: 15rem"
           justify="center"
           no-gutters
           dense
           ><v-col cols="8" sm="11" xs="11" md="10">
             <v-row no-gutters dense justify="center">
               <v-col v-for="(content, index) in cardContents" :key="index">
-                <MyCard :cardContent="content" :index="index" />
+                <MyCard class="mx-4" :cardContent="content" :index="index" />
               </v-col>
             </v-row>
           </v-col>
@@ -268,7 +268,7 @@ const onContactButtonClick = () => {
 
 <style scoped>
 .margin-intro-message {
-  margin-top: 150px;
+  margin-top: 100px;
 }
 .after-picture-area {
   position: relative;
@@ -315,7 +315,7 @@ const onContactButtonClick = () => {
 }
 .extend-card {
   width: 100%;
-  height: 700px;
+  height: 850px;
 }
 .phone-extend-card {
   width: 100%;
