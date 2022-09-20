@@ -248,19 +248,38 @@ const onContactButtonClick = () => {
               </v-row>
             </v-col>
           </v-row>
-          <v-row class="mb-10">
-            <v-spacer />
-            <v-spacer />
+          <v-row class="curriculo-card-margin" justify="center">
             <v-col cols="10" lg="6">
-              <p ref="curriculo" class="default-text">
-                Gostaria de ver meu currículo?
-                <a
-                  href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
-                  >Clique aqui.</a
-                >
-              </p>
+              <v-card class="curriculo-card" height="370" elevation="2">
+                <div class="h-100">
+                  <v-row class="h-100">
+                    <v-col cols="12" align-self="center">
+                      <v-row justify="center">
+                        <p ref="curriculo" class="secondary-title-text mb-10">
+                          Currículo
+                        </p>
+                      </v-row>
+                      <v-row justify="center">
+                        <p class="subtitle-text mb-10">
+                          Para conhecer mais o meu trabalho e minha carreira
+                        </p>
+                      </v-row>
+                      <v-row justify="center">
+                        <v-btn
+                          height="44"
+                          width="290"
+                          color="primary"
+                          variant="outlined"
+                          href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
+                        >
+                          Acesse meu currículo
+                        </v-btn>
+                      </v-row>
+                    </v-col>
+                  </v-row>
+                </div>
+              </v-card>
             </v-col>
-            <v-spacer />
           </v-row>
         </div>
       </div>
@@ -332,5 +351,12 @@ const onContactButtonClick = () => {
 .message-button {
   min-height: 43px;
   min-width: 286px;
+}
+.curriculo-card {
+  border-radius: 15px;
+  background-color: #fafafa;
+}
+.curriculo-card-margin {
+  padding-top: 100px;
 }
 </style>

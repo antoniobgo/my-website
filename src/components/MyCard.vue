@@ -19,7 +19,7 @@ const smallCardClasses =
     : ref(["rounded-b-xl", "rounded-t-0"]);
 </script>
 <template>
-  <v-card class="rounded-xl" min-height="876" min-width="478">
+  <v-card elevation="7" class="card-rounded" min-height="876" min-width="478">
     <v-card-title>
       <v-row>
         <v-col>
@@ -50,7 +50,7 @@ const smallCardClasses =
     <v-row v-for="tool in props.cardContent.tools" :key="tool" justify="center">
       <p class="text-center subtitle-text pa-1">{{ tool }}</p>
     </v-row>
-    <v-row v-if="props.cardContent.subTools" justify="center" class="pt-5 pb-3">
+    <v-row v-if="props.cardContent.subTools" justify="center" class="py-10">
       <p
         class="default-text text-center"
         style="color: rgb(var(--v-theme-primary))"
@@ -73,5 +73,8 @@ const smallCardClasses =
 <style>
 .icon-size {
   font-size: 4em;
+}
+.card-rounded {
+  border-radius: 40px;
 }
 </style>
