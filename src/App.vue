@@ -16,7 +16,7 @@ const onLogoClick = function () {
   <v-app class="app-font">
     <v-app-bar absolute flat class="text-primary my-app-bar">
       <template v-slot:prepend>
-        <v-btn class="mt-5">
+        <v-btn class="mt-8 ml-8">
           <div
             @click="onLogoClick"
             :class="mdAndUp ? 'logo' : 'responsive-logo'"
@@ -24,7 +24,14 @@ const onLogoClick = function () {
         </v-btn>
       </template>
       <template v-slot:append>
-        <v-btn @click="onContactButtonClick" size="small" variant="outlined">
+        <v-btn
+          id="contact-button"
+          class="mt-8 mr-8"
+          @click="onContactButtonClick"
+          width="110"
+          height="42"
+          variant="outlined"
+        >
           Contato
         </v-btn>
       </template>
@@ -48,6 +55,15 @@ const onLogoClick = function () {
 </template>
 
 <style>
+@font-face {
+  font-family: downloadedInter;
+  src: url("/src/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+#contact-button > .v-btn__content {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.21rem;
+}
 .my-app-bar {
   height: 5rem;
 }
@@ -62,25 +78,18 @@ const onLogoClick = function () {
   width: 6rem;
 }
 .app-font {
-  font-family: Alata, sans-serif;
+  font-family: downloadedInter, sans-serif;
 }
 .secondary-title-text {
-  font-weight: 800;
-  line-height: 2.25rem;
-  font-size: 2rem;
-  letter-spacing: 0.1rem;
+  font-weight: 700;
+  line-height: 1.563rem;
+  font-size: 2.5rem;
 }
 .title-text {
-  font-weight: 800;
-  line-height: 5rem;
-  font-size: 4rem;
-  letter-spacing: 0.15rem;
-}
-.titleText {
-  font-weight: 800;
-  line-height: 5rem;
-  font-size: 4rem;
-  letter-spacing: 0.15rem;
+  font-weight: 700;
+  line-height: 6.429rem;
+  font-size: 5.313rem;
+  letter-spacing: 0.1rem;
 }
 .smaller-title-text {
   font-size: 1.4rem;
@@ -89,22 +98,22 @@ const onLogoClick = function () {
   letter-spacing: 0.15rem;
 }
 .default-text {
-  font-weight: 300;
-  line-height: 1.875rem;
-  font-size: 1.5rem;
-  letter-spacing: 0.01rem;
+  font-weight: 600;
+  line-height: 2.063rem;
+  font-size: 1.69rem;
+  letter-spacing: 0.056rem;
 }
 .card-title {
-  font-weight: 800;
-  line-height: 1.8rem;
-  font-size: 2rem;
-  letter-spacing: 0.01rem;
+  font-weight: 900;
+  line-height: 3.75rem;
+  font-size: 3.125rem;
+  letter-spacing: 0.056rem;
 }
 .subtitle-text {
-  font-weight: 300;
-  line-height: 1.6rem;
-  font-size: 1.2rem;
-  letter-spacing: 0.05rem;
+  font-weight: 500;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.125rem;
 }
 .subtitle-card-text {
   font-weight: 300;

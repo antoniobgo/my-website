@@ -19,22 +19,19 @@ const smallCardClasses =
     : ref(["rounded-b-xl", "rounded-t-0"]);
 </script>
 <template>
-  <v-card
-    :class="mdAndUp ? [...cardClasses] : [...smallCardClasses]"
-    min-height="700"
-  >
+  <v-card elevation="7" class="card-rounded" min-height="876" min-width="478">
     <v-card-title>
       <v-row>
         <v-col>
-          <v-row class="pa-15">
+          <v-row class="pt-15 pb-5">
             <v-spacer />
-            <v-icon color="primary" class="icon-size">
+            <v-icon color="primary" size="150" class="icon-size">
               {{ props.cardContent.icon }}
             </v-icon>
             <!-- <v-icon color="primary" class="icon-size"> mdi-cog-outline </v-icon> -->
             <v-spacer />
           </v-row>
-          <v-row class="pb-10">
+          <v-row>
             <v-spacer />
             <p class="card-title">{{ props.cardContent.title }}</p>
             <v-spacer />
@@ -42,49 +39,42 @@ const smallCardClasses =
         </v-col>
       </v-row>
     </v-card-title>
-    <v-card-text>
-      <v-row justify="center" class="py-5">
-        <p
-          class="default-text text-center"
-          style="color: rgb(var(--v-theme-primary))"
-        >
-          {{ props.cardContent.subtitle }}
-        </p>
-      </v-row>
-      <v-row
-        v-for="tool in props.cardContent.tools"
-        :key="tool"
-        justify="center"
+    <v-row justify="center" class="py-10">
+      <p
+        class="default-text text-center"
+        style="color: rgb(var(--v-theme-primary))"
       >
-        <p class="text-center subtitle-text pa-2">{{ tool }}</p>
-      </v-row>
-      <v-row
-        v-if="props.cardContent.subTools"
-        justify="center"
-        class="pt-5 pb-3"
+        {{ props.cardContent.subtitle }}
+      </p>
+    </v-row>
+    <v-row v-for="tool in props.cardContent.tools" :key="tool" justify="center">
+      <p class="text-center subtitle-text pa-1">{{ tool }}</p>
+    </v-row>
+    <v-row v-if="props.cardContent.subTools" justify="center" class="py-10">
+      <p
+        class="default-text text-center"
+        style="color: rgb(var(--v-theme-primary))"
       >
-        <p
-          class="default-text text-center"
-          style="color: rgb(var(--v-theme-primary))"
-        >
-          Também tenho interesse em:
-        </p>
-      </v-row>
-      <v-row
-        v-for="subTool in props.cardContent.subTools"
-        :key="subTool"
-        justify="center"
-      >
-        <p class="subtitle-text text-center pa-2">
-          {{ subTool }}
-        </p>
-      </v-row>
-    </v-card-text>
+        Interesse em:
+      </p>
+    </v-row>
+    <v-row
+      v-for="subTool in props.cardContent.subTools"
+      :key="subTool"
+      justify="center"
+    >
+      <p class="subtitle-text text-center pa-1">
+        {{ subTool }}
+      </p>
+    </v-row>
   </v-card>
 </template>
 
 <style>
 .icon-size {
   font-size: 4em;
+}
+.card-rounded {
+  border-radius: 40px;
 }
 </style>

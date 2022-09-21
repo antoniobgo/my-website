@@ -16,10 +16,12 @@ const clickFunction = props.clickFunction
 <template>
   <v-hover v-slot="{ props, isHovering }">
     <v-btn
+      id="main-button"
       class="ma-3"
       @click="clickFunction"
       variant="outlined"
-      size="large"
+      height="55"
+      width="255"
       :rounded="rounded ? rounded : 'pill'"
       :class="{
         'bg-primary': isHovering,
@@ -32,3 +34,11 @@ const clickFunction = props.clickFunction
     </v-btn>
   </v-hover>
 </template>
+
+<style>
+#main-button > .v-btn__content {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.361rem;
+}
+</style>
