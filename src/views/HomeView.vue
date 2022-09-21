@@ -171,40 +171,45 @@ const onContactButtonClick = () => {
         </v-row>
       </div>
       <div class="after-picture-area">
-        <v-row
-          no-gutters
-          dense
-          justify="center"
+        <div
           :class="mdAndUp ? 'extend-card' : 'phone-extend-card'"
           class="bg-primary extend-card"
         >
-          <v-col
-            :align-self="mdAndUp ? 'center' : 'center'"
-            cols="7"
-            class="mb-30"
-          >
-            <v-row class="margin-intro-message" no-gutters justify="center">
-              <p
-                ref="quemSou"
-                class="text-center"
-                :class="mdAndUp ? 'secondary-title-text' : 'smaller-title-text'"
+          <v-row no-gutters dense justify="center">
+            <v-col cols="11">
+              <v-row
+                no-gutters
+                dense
+                justify="center"
+                class="margin-intro-message"
               >
-                Olá, sou o Antônio. Prazer em te conhecer.
-              </p>
-            </v-row>
-            <v-row no-gutters dense justify="center" class="mt-10">
-              <p
-                class="text-center"
-                :class="mdAndUp ? 'subtitle-text' : 'smaller-card-text'"
-              >
-                Sempre tive interesse pela área de desenvolvimento de software,
-                começando meus estudos na área há 6 anos e desenvolvendo
-                aplicações web de forma profissional há 3 anos. Sou apaixonado
-                pelo que faço e tenho uma grande sede de conhecimento :)
-              </p>
-            </v-row>
-          </v-col>
-        </v-row>
+                <p
+                  ref="quemSou"
+                  class="text-center"
+                  :class="
+                    mdAndUp ? 'secondary-title-text' : 'smaller-title-text'
+                  "
+                >
+                  Olá, sou o Antônio. Prazer em te conhecer.
+                </p>
+              </v-row>
+            </v-col>
+            <v-col cols="6">
+              <v-row justify="center">
+                <p
+                  class="text-center mt-15"
+                  :class="mdAndUp ? 'subtitle-text' : 'smaller-card-text'"
+                >
+                  Sempre tive interesse pela área de desenvolvimento de
+                  software, começando meus estudos na área há 6 anos e
+                  desenvolvendo aplicações web de forma profissional há 3 anos.
+                  Sou apaixonado pelo que faço e tenho uma grande sede de
+                  conhecimento :)
+                </p>
+              </v-row>
+            </v-col>
+          </v-row>
+        </div>
         <p style="position: relative; bottom: 15rem" ref="oQueFaco"></p>
         <div style="position: relative; bottom: 15rem">
           <v-row justify="center" no-gutters dense
@@ -294,7 +299,7 @@ const onContactButtonClick = () => {
 
 <style scoped>
 .margin-intro-message {
-  margin-top: 100px;
+  margin-top: 220px;
 }
 .after-picture-area {
   position: relative;
