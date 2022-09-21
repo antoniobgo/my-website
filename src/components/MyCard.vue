@@ -19,7 +19,7 @@ const smallCardClasses =
     : ref(["rounded-b-xl", "rounded-t-0"]);
 </script>
 <template>
-  <v-card elevation="7" class="card-rounded" min-height="876" min-width="478">
+  <v-card elevation="7" class="card-rounded" min-height="876">
     <v-card-title>
       <v-row>
         <v-col>

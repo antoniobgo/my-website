@@ -134,13 +134,13 @@ const onContactButtonClick = () => {
         </v-col>
       </v-row>
       <v-row dense no-gutters justify="center">
-        <v-col sm="10" xs="10" md="8" lg="8">
+        <v-col sm="11" xs="11" md="10">
           <v-row justify="center">
             <p
               :class="mdAndUp ? 'title-text' : 'smaller-title-text'"
               class="title-margin"
             >
-              Desenvolvedor Full-Stack
+              Desenvolvedor FullStack
             </p>
           </v-row>
         </v-col>
@@ -210,7 +210,12 @@ const onContactButtonClick = () => {
           <v-row justify="center" no-gutters dense
             ><v-col cols="8" sm="11" xs="11" md="10">
               <v-row no-gutters dense justify="center">
-                <v-col v-for="(content, index) in cardContents" :key="index">
+                <v-col
+                  v-for="(content, index) in cardContents"
+                  :key="index"
+                  cols="12"
+                  md="4"
+                >
                   <MyCard class="mx-4" :cardContent="content" :index="index" />
                 </v-col>
               </v-row>
