@@ -92,10 +92,9 @@ const onLogoClick = function () {
   letter-spacing: 0.1rem;
 }
 .smaller-title-text {
-  font-size: 1.4rem;
-  font-weight: 800;
-  line-height: 2.5rem;
-  letter-spacing: 0.15rem;
+  font-size: 1.313rem;
+  font-weight: 700;
+  line-height: 1.563rem;
 }
 .default-text {
   font-weight: 600;
