@@ -238,11 +238,11 @@ const onContactButtonClick = () => {
           </v-row>
           <v-row class="my-10" justify="center">
             <v-col cols="11" md="9" lg="8">
-              <v-row>
-                <v-col cols="12" lg="4" md="6">
+              <v-row justify="center">
+                <v-col cols="12" md="5">
                   <PortfolioCard :portfolio="jobs[0]" />
                 </v-col>
-                <v-col cols="12" lg="4" md="6">
+                <v-col cols="12" md="5">
                   <PortfolioCard :portfolio="jobs[1]" />
                 </v-col>
               </v-row>
@@ -261,7 +261,7 @@ const onContactButtonClick = () => {
                       </v-row>
                       <v-row justify="center">
                         <p class="subtitle-text mb-10">
-                          Para conhecer mais o meu trabalho e minha carreira
+                          Para conhecer mais o meu trabalho e minha carreira:
                         </p>
                       </v-row>
                       <v-row justify="center">
@@ -357,6 +357,6 @@ const onContactButtonClick = () => {
   background-color: #fafafa;
 }
 .curriculo-card-margin {
-  padding-top: 100px;
+  padding-top: 130px;
 }
 </style>
