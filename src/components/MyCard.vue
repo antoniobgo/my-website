@@ -19,13 +19,21 @@ const smallCardClasses =
     : ref(["rounded-b-xl", "rounded-t-0"]);
 </script>
 <template>
-  <v-card elevation="7" class="card-rounded" min-height="876">
+  <v-card
+    elevation="7"
+    class="card-rounded"
+    :min-height="mdAndUp ? '876' : '350'"
+  >
     <v-card-title>
       <v-row>
         <v-col>
           <v-row class="pt-15 pb-5">
             <v-spacer />
-            <v-icon color="primary" size="150" class="icon-size">
+            <v-icon
+              color="primary"
+              :size="mdAndUp ? '150' : '75'"
+              class="icon-size"
+            >
               {{ props.cardContent.icon }}
             </v-icon>
             <!-- <v-icon color="primary" class="icon-size"> mdi-cog-outline </v-icon> -->
@@ -33,7 +41,9 @@ const smallCardClasses =
           </v-row>
           <v-row>
             <v-spacer />
-            <p class="card-title">{{ props.cardContent.title }}</p>
+            <p :class="mdAndUp ? 'card-title' : 'smaller-card-title'">
+              {{ props.cardContent.title }}
+            </p>
             <v-spacer />
           </v-row>
         </v-col>
@@ -41,32 +51,44 @@ const smallCardClasses =
     </v-card-title>
     <v-row justify="center" class="py-10">
       <p
-        class="default-text text-center"
+        class="text-center"
+        :class="mdAndUp ? 'default-text' : 'smaller-default-text'"
         style="color: rgb(var(--v-theme-primary))"
       >
         {{ props.cardContent.subtitle }}
       </p>
     </v-row>
     <v-row v-for="tool in props.cardContent.tools" :key="tool" justify="center">
-      <p class="text-center subtitle-text pa-1">{{ tool }}</p>
+      <p
+        class="text-center pa-1"
+        :class="mdAndUp ? 'subtitle-text' : 'smaller-subtitle-text'"
+      >
+        {{ tool }}
+      </p>
     </v-row>
     <v-row v-if="props.cardContent.subTools" justify="center" class="py-10">
       <p
-        class="default-text text-center"
+        class="text-center"
+        :class="mdAndUp ? 'default-text' : 'smaller-default-text'"
         style="color: rgb(var(--v-theme-primary))"
       >
         Interesse em:
       </p>
     </v-row>
-    <v-row
-      v-for="subTool in props.cardContent.subTools"
-      :key="subTool"
-      justify="center"
-    >
-      <p class="subtitle-text text-center pa-1">
-        {{ subTool }}
-      </p>
-    </v-row>
+    <div class="pb-15">
+      <v-row
+        v-for="subTool in props.cardContent.subTools"
+        :key="subTool"
+        justify="center"
+      >
+        <p
+          class="text-center pa-1"
+          :class="mdAndUp ? 'subtitle-text' : 'smaller-subtitle-text'"
+        >
+          {{ subTool }}
+        </p>
+      </v-row>
+    </div>
   </v-card>
 </template>
 

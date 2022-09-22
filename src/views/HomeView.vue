@@ -247,7 +247,11 @@ const onContactButtonClick = () => {
                   cols="12"
                   md="4"
                 >
-                  <MyCard class="mx-4" :cardContent="content" :index="index" />
+                  <MyCard
+                    :class="mdAndUp ? 'mx-4' : 'mx-0 px-0 my-5'"
+                    :cardContent="content"
+                    :index="index"
+                  />
                 </v-col>
               </v-row>
             </v-col>
@@ -284,19 +288,24 @@ const onContactButtonClick = () => {
               </v-row>
             </v-col>
           </v-row>
-          <v-row class="curriculo-card-margin" justify="center">
-            <v-col cols="10" lg="6">
+          <v-row
+            no-gutters
+            dense
+            class="curriculo-card-margin"
+            justify="center"
+          >
+            <v-col cols="11" lg="6">
               <v-card class="curriculo-card" height="370" elevation="2">
                 <div class="h-100">
-                  <v-row class="h-100">
+                  <v-row no-gutters dense class="h-100">
                     <v-col cols="12" align-self="center">
                       <v-row justify="center">
                         <p ref="curriculo" class="secondary-title-text mb-10">
                           Currículo
                         </p>
                       </v-row>
-                      <v-row justify="center">
-                        <p class="subtitle-text mb-10">
+                      <v-row no-gutters dense justify="center">
+                        <p class="subtitle-text text-center mb-10">
                           Para conhecer mais o meu trabalho e minha carreira:
                         </p>
                       </v-row>
@@ -397,7 +406,7 @@ const onContactButtonClick = () => {
 }
 .phone-extend-card {
   width: 100%;
-  height: 120vh;
+  height: 110vh;
 }
 .title-margin {
   margin-top: 10rem;
