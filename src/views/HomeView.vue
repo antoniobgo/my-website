@@ -147,7 +147,13 @@ const onContactButtonClick = () => {
       </v-row>
       <v-row no-gutters dense justify="center">
         <v-col cols="8">
-          <p class="subtitle-text subtitle-margin text-center">
+          <p
+            :class="
+              mdAndUp
+                ? 'subtitle-text subtitle-margin text-center'
+                : 'smaller-subtitle-text subtitle-margin text-center'
+            "
+          >
             Gosto de ajudar a resolver problemas reais com simplicidade e
             qualidade.
           </p>
@@ -157,12 +163,13 @@ const onContactButtonClick = () => {
       <div class="avatar-margin">
         <v-row no-gutters dense justify="center" align-self="center">
           <div
-            class="bg-white rounded-border d-flex justify-center align-center"
+            class="bg-white d-flex justify-center align-center"
+            :class="mdAndUp ? 'rounded-border' : 'smaller-rounded-border'"
           >
             <v-img
               class="bg-white"
-              max-width="317"
-              max-height="317"
+              :max-width="mdAndUp ? '317' : '180'"
+              :max-height="mdAndUp ? '317' : '180'"
               style="border-radius: 50% !important"
               :src="require('../assets/pic2.png')"
               cover
@@ -170,34 +177,53 @@ const onContactButtonClick = () => {
           </div>
         </v-row>
       </div>
-      <div class="after-picture-area">
+      <div
+        :class="mdAndUp ? 'after-picture-area' : 'after-smaller-picture-area'"
+      >
         <div
           :class="mdAndUp ? 'extend-card' : 'phone-extend-card'"
           class="bg-primary extend-card"
         >
-          <v-row no-gutters dense justify="center">
-            <v-col cols="11">
-              <v-row
-                no-gutters
-                dense
-                justify="center"
-                class="margin-intro-message"
-              >
+          <v-row justify="center">
+            <v-col
+              cols="11"
+              :class="
+                mdAndUp
+                  ? 'margin-intro-message'
+                  : 'smaller-margin-intro-message'
+              "
+            >
+              <v-row justify="center">
                 <p
                   ref="quemSou"
                   class="text-center"
                   :class="
-                    mdAndUp ? 'secondary-title-text' : 'smaller-title-text'
+                    mdAndUp
+                      ? 'secondary-title-text py-5'
+                      : 'smaller-title-text py-2'
                   "
                 >
-                  Olá, sou o Antônio. Prazer em te conhecer.
+                  Olá, sou o Antônio.
+                </p>
+              </v-row>
+              <v-row justify="center">
+                <p
+                  ref="quemSou"
+                  class="text-center"
+                  :class="
+                    mdAndUp
+                      ? 'secondary-title-text py-5'
+                      : 'smaller-title-text py-2'
+                  "
+                >
+                  Prazer em te conhecer.
                 </p>
               </v-row>
             </v-col>
-            <v-col cols="6">
+            <v-col cols="9" md="6">
               <v-row justify="center">
                 <p
-                  class="text-center mt-15"
+                  class="text-center pt-7"
                   :class="mdAndUp ? 'subtitle-text' : 'smaller-card-text'"
                 >
                   Sempre tive interesse pela área de desenvolvimento de
@@ -221,7 +247,11 @@ const onContactButtonClick = () => {
                   cols="12"
                   md="4"
                 >
-                  <MyCard class="mx-4" :cardContent="content" :index="index" />
+                  <MyCard
+                    :class="mdAndUp ? 'mx-4' : 'mx-0 px-0 my-5'"
+                    :cardContent="content"
+                    :index="index"
+                  />
                 </v-col>
               </v-row>
             </v-col>
@@ -258,19 +288,24 @@ const onContactButtonClick = () => {
               </v-row>
             </v-col>
           </v-row>
-          <v-row class="curriculo-card-margin" justify="center">
-            <v-col cols="10" lg="6">
+          <v-row
+            no-gutters
+            dense
+            class="curriculo-card-margin"
+            justify="center"
+          >
+            <v-col cols="11" lg="6">
               <v-card class="curriculo-card" height="370" elevation="2">
                 <div class="h-100">
-                  <v-row class="h-100">
+                  <v-row no-gutters dense class="h-100">
                     <v-col cols="12" align-self="center">
                       <v-row justify="center">
                         <p ref="curriculo" class="secondary-title-text mb-10">
                           Currículo
                         </p>
                       </v-row>
-                      <v-row justify="center">
-                        <p class="subtitle-text mb-10">
+                      <v-row no-gutters dense justify="center">
+                        <p class="subtitle-text text-center mb-10">
                           Para conhecer mais o meu trabalho e minha carreira:
                         </p>
                       </v-row>
@@ -301,14 +336,29 @@ const onContactButtonClick = () => {
 .margin-intro-message {
   margin-top: 220px;
 }
+.smaller-margin-intro-message {
+  margin-top: 150px;
+}
 .after-picture-area {
   position: relative;
   top: -160px;
   z-index: 0;
 }
+.after-smaller-picture-area {
+  position: relative;
+  top: -90px;
+  z-index: 0;
+}
 .rounded-border {
   min-height: 335px;
   min-width: 335px;
+  border: solid black 1px;
+  border-radius: 50%;
+  z-index: 3;
+}
+.smaller-rounded-border {
+  min-height: 192px;
+  min-width: 192px;
   border: solid black 1px;
   border-radius: 50%;
   z-index: 3;
@@ -331,11 +381,17 @@ const onContactButtonClick = () => {
   text-transform: none !important;
 }
 .smaller-card-text {
-  font-size: 1rem !important;
+  font-size: 1rem;
   font-weight: 300;
   line-height: 1.4rem;
   letter-spacing: 0.1em !important;
   text-transform: none !important;
+}
+.smaller-subtitle-text {
+  font-size: 0.94rem;
+  line-height: 1.375rem;
+  font-weight: 500;
+  letter-spacing: 0.031rem;
 }
 .avatar {
   width: 210px;
@@ -350,7 +406,7 @@ const onContactButtonClick = () => {
 }
 .phone-extend-card {
   width: 100%;
-  height: 120vh;
+  height: 110vh;
 }
 .title-margin {
   margin-top: 10rem;

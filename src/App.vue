@@ -92,10 +92,9 @@ const onLogoClick = function () {
   letter-spacing: 0.1rem;
 }
 .smaller-title-text {
-  font-size: 1.4rem;
-  font-weight: 800;
-  line-height: 2.5rem;
-  letter-spacing: 0.15rem;
+  font-size: 1.313rem;
+  font-weight: 700;
+  line-height: 1.563rem;
 }
 .default-text {
   font-weight: 600;
@@ -103,17 +102,35 @@ const onLogoClick = function () {
   font-size: 1.69rem;
   letter-spacing: 0.056rem;
 }
+.smaller-default-text {
+  font-weight: 600;
+  line-height: 1.1rem;
+  font-size: 1rem;
+  letter-spacing: 0.031rem;
+}
 .card-title {
   font-weight: 900;
   line-height: 3.75rem;
   font-size: 3.125rem;
   letter-spacing: 0.056rem;
 }
+.smaller-card-title {
+  font-weight: 900;
+  line-height: 2rem;
+  font-size: 1.75rem;
+  letter-spacing: 0.031rem;
+}
 .subtitle-text {
   font-weight: 500;
   line-height: 2.5rem;
   font-size: 1.5rem;
   letter-spacing: 0.125rem;
+}
+.smaller-subtitle-text {
+  font-weight: 500;
+  line-height: 1.313rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.031rem;
 }
 .subtitle-card-text {
   font-weight: 300;
