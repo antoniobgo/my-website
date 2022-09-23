@@ -277,15 +277,11 @@ const onContactButtonClick = () => {
             </v-col>
           </v-row>
           <v-row class="my-10" justify="center">
-            <v-col cols="11" md="9" lg="8">
-              <v-row justify="center">
-                <v-col cols="12" md="5">
-                  <PortfolioCard :portfolio="jobs[0]" />
-                </v-col>
-                <v-col cols="12" md="5">
-                  <PortfolioCard :portfolio="jobs[1]" />
-                </v-col>
-              </v-row>
+            <v-col cols="12" md="4">
+              <PortfolioCard :portfolio="jobs[0]" />
+            </v-col>
+            <v-col cols="12" md="4">
+              <PortfolioCard :portfolio="jobs[1]" />
             </v-col>
           </v-row>
           <v-row
@@ -294,7 +290,7 @@ const onContactButtonClick = () => {
             class="curriculo-card-margin"
             justify="center"
           >
-            <v-col cols="11" lg="6">
+            <v-col cols="11" lg="8">
               <v-card class="curriculo-card" height="370" elevation="2">
                 <div class="h-100">
                   <v-row no-gutters dense class="h-100">
