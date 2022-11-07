@@ -2,7 +2,7 @@
 
 ## Link
 ```
-https://antoniogomesdev.xyz/#/
+https://antoniogomesdev.xyz/
 ```
 
 ### Ferramentas utilizadas
