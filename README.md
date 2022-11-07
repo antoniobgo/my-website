@@ -1,24 +1,11 @@
-# my-site
+# Meu site pessoal.
 
-## Project setup
+## Link
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+https://antoniogomesdev.xyz/#/
 ```
 
-### Compiles and minifies for production
+### Ferramentas utilizadas
 ```
-npm run build
+Vue.js 3, Vue Router, Vuetify 3 Beta.
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
