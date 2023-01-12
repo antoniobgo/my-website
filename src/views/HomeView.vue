@@ -30,7 +30,7 @@ const jobs = [
   },
   {
     title:
-      "Trabalho ainda em desenvolvimento. Criação de um site a partir de protótipos vindo do cliente",
+      "Criação de um site do tipo portfólio para um profissional da área de design",
     techList: ["Front-End", "Vue.js"],
     logo: "felipe-logo.svg",
     link: "https://felipe-website-1e521.web.app",
