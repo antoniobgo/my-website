@@ -127,7 +127,7 @@ const onContactButtonClick = () => {
           <v-row no-gutters dense justify="center">
             <OnHoverButton
               size="small"
-              content="currículo"
+              content="linkedin"
               :clickFunction="onCurriculoClick"
             />
           </v-row>
@@ -297,7 +297,7 @@ const onContactButtonClick = () => {
                     <v-col cols="12" align-self="center">
                       <v-row justify="center">
                         <p ref="curriculo" class="secondary-title-text mb-10">
-                          Currículo
+                          LinkedIn
                         </p>
                       </v-row>
                       <v-row no-gutters dense justify="center">
@@ -311,9 +311,9 @@ const onContactButtonClick = () => {
                           width="290"
                           color="primary"
                           variant="outlined"
-                          href="https://drive.google.com/file/d/1C9gGqU7IoiTru6lEaU9W-2udX4reMxKT/view?usp=sharing"
+                          href="https://linkedin.com/in/antonio-gomes-dev"
                         >
-                          Acesse meu currículo
+                          Acesse meu LinkedIn
                         </v-btn>
                       </v-row>
                     </v-col>
