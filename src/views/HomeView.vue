@@ -22,6 +22,13 @@ const curriculo = ref();
 
 const jobs = [
   {
+    title: "Criação de uma aplicação gerenciadora de tarefas.",
+    techList: ["FullStack", "Vue.js", "Rails"],
+    logo: "done.svg",
+    link: "https://tobdone-3a16b.web.app/",
+    repoAddress: "https://github.com/antoniobgo/2BDone",
+  },
+  {
     title:
       "Desenvolvimento de um site pessoal próprio, servindo informações profissionais relevantes.",
     techList: ["Front-End", "Vue.js"],
@@ -277,11 +284,14 @@ const onContactButtonClick = () => {
             </v-col>
           </v-row>
           <v-row class="my-10" justify="center">
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="3">
               <PortfolioCard :portfolio="jobs[0]" />
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="3">
               <PortfolioCard :portfolio="jobs[1]" />
+            </v-col>
+            <v-col cols="12" md="3">
+              <PortfolioCard :portfolio="jobs[2]" />
             </v-col>
           </v-row>
           <v-row
